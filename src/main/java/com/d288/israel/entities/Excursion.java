@@ -3,39 +3,39 @@ package com.d288.israel.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.math.BigDecimal;
-import java.util.Set;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-@Table(name="excursions")
+@Table(name = "excursions")
 @Getter
 @Setter
 public class Excursion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "excursion_id")
     private Long id;
 
-    @Column(name = "excursion_title")
-    private String excursionTitle;
+    @Column(name = "create_date")
+    @CreationTimestamp
+    private Date create_date;
 
     @Column(name = "excursion_price")
-    private BigDecimal excursionPrice;
+    private BigDecimal excursion_price;
+
+    @Column(name = "excursion_title")
+    private String excursion_title;
 
     @Column(name = "image_url")
-    private String imageURL;
-
-    @Column(name = "create_date")
-    private Date createDate;
+    private String image_URL;
 
     @Column(name = "last_update")
-    private Date lastUpdate;
+    @UpdateTimestamp
+    private Date last_update;
 
-    @ManyToOne
-    @JoinColumn(name = "vacation_id")
-    private Vacation vacation;
-
-    @OneToMany(mappedBy = "excursion")
-    private Set<CartItem> cartItem;
 
 }

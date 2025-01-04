@@ -3,27 +3,29 @@ package com.d288.israel.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.Set;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-@Table(name="countries")
+@Table(name = "countries")
 @Getter
 @Setter
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "country_id")
     private Long id;
 
-    @Column(name = "country_name")
-    private String countryName;
+    @Column(name = "country")
+    private String country_name;
 
     @Column(name = "create_date")
-    private Date createDate;
+    @CreationTimestamp
+    private Date create_date;
 
     @Column(name = "last_update")
-    private Date lastUpdate;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
-    private Set<Division> division;
+    @UpdateTimestamp
+    private Date last_update;
 }
