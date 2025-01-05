@@ -37,5 +37,9 @@ public class Excursion {
     @UpdateTimestamp
     private Date last_update;
 
+    @ManyToOne
+    private Vacation vacations;
 
+    @ManyToMany(mappedBy = "excursions")
+    private Set<CartItem> cartItems;
 }

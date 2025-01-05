@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
@@ -38,5 +37,10 @@ public class Vacation {
 
     @Column(name = "vacation_title")
     private String vacation_title;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacations")
+    private Set<Excursion> excursions;
+
+
 
 }

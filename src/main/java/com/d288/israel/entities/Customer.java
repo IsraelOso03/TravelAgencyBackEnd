@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name="customers")
@@ -40,6 +41,12 @@ public class Customer {
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customers")
+    private Set<Cart> carts;
+
+    @ManyToOne
+    private Division divisions;
 
 
 }

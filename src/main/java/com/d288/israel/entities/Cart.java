@@ -35,4 +35,15 @@ public class Cart {
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customers;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "carts")
+    private Set<CartItem> cartItems;
+
+    @Enumerated(value = EnumType.STRING)
+    private StatusType status;
+
 }

@@ -28,4 +28,9 @@ public class Country {
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "countries")
+    private Set<Division> divisions;
+
+
 }

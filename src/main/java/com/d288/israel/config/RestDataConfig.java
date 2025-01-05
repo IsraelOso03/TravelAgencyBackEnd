@@ -1,6 +1,5 @@
 package com.d288.israel.config;
 
-//import edu.wgu.d288_backend.entities.*;
 import com.d288.israel.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
