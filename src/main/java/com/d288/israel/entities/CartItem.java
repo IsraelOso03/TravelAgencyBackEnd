@@ -28,13 +28,12 @@ public class CartItem {
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
-    private Cart carts;
+    private Cart cart;
 
-    @ManyToMany
-    @JoinTable(
-            name = "excursion_cartitem",
-            joinColumns = @JoinColumn(name = "excursion_id"),
-            inverseJoinColumns = @JoinColumn(name = "cart_item_id")
-    )
+    @ManyToMany(mappedBy = "cartItems")
     private Set<Excursion> excursions;
+
+    @ManyToOne
+    @JoinColumn(name = "vacation_id")
+    private Vacation vacation;
 }

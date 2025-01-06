@@ -30,11 +30,11 @@ public class Division {
     @UpdateTimestamp
     private Date last_update;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "divisions")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;
 
     @ManyToOne
     @JoinColumn(name = "country_id")
-    private Country countries;
+    private Country country;
 
 }

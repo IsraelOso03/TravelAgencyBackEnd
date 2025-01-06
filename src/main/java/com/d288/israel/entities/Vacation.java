@@ -38,9 +38,10 @@ public class Vacation {
     @Column(name = "vacation_title")
     private String vacation_title;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacations")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
     private Set<Excursion> excursions;
 
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
+    private Set<CartItem> cartItems;
 
 }

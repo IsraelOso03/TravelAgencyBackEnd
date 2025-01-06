@@ -42,11 +42,12 @@ public class Customer {
     @UpdateTimestamp
     private Date last_update;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customers")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Set<Cart> carts;
 
     @ManyToOne
-    private Division divisions;
+    @JoinColumn(name = "division_id")
+    private Division division;
 
 
 }

@@ -38,9 +38,9 @@ public class Cart {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    private Customer customers;
+    private Customer customer;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "carts")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItems;
 
     @Enumerated(value = EnumType.STRING)
