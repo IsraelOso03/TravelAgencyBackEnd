@@ -46,4 +46,6 @@ public class Cart {
     @Enumerated(value = EnumType.STRING)
     private StatusType status;
 
+    public void add(CartItem item) {
+    }
 }

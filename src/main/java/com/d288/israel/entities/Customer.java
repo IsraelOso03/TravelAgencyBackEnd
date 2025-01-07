@@ -50,4 +50,6 @@ public class Customer {
     private Division division;
 
 
+    public void add(Cart cart) {
+    }
 }
