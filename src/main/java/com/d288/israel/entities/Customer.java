@@ -46,6 +46,16 @@ public class Customer {
     @JoinColumn(name = "division_id")
     private Division division;
 
+    public Customer() {}
+    public Customer(String firstName, String lastName, String address, String postal_code, String phone, Division division) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postal_code = postal_code;
+        this.phone = phone;
+        this.division = division;
+    }
+
     public void add(Cart cart) {
     }
 
@@ -128,4 +138,5 @@ public class Customer {
     public void setDivision(Division division) {
         this.division = division;
     }
+
 }
