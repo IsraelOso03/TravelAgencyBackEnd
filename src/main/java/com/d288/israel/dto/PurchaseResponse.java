@@ -1,4 +1,4 @@
-package com.d288.israel.services;
+package com.d288.israel.dto;
 
 import lombok.Data;
 import lombok.Getter;

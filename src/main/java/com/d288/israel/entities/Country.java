@@ -1,17 +1,14 @@
 package com.d288.israel.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "countries")
-@Getter
-@Setter
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,4 +30,43 @@ public class Country {
     private Set<Division> divisions;
 
 
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getCountry_name() {
+        return this.country_name;
+    }
+
+    public Date getCreate_date() {
+        return this.create_date;
+    }
+
+    public Date getLast_update() {
+        return this.last_update;
+    }
+
+    public Set<Division> getDivisions() {
+        return this.divisions;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCountry_name(String country_name) {
+        this.country_name = country_name;
+    }
+
+    public void setCreate_date(Date create_date) {
+        this.create_date = create_date;
+    }
+
+    public void setLast_update(Date last_update) {
+        this.last_update = last_update;
+    }
+
+    public void setDivisions(Set<Division> divisions) {
+        this.divisions = divisions;
+    }
 }

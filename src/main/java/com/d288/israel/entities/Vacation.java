@@ -1,17 +1,14 @@
 package com.d288.israel.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "vacations")
-@Getter
-@Setter
 public class Vacation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,4 +41,75 @@ public class Vacation {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
     private Set<CartItem> cartItems;
 
+    public Long getId() {
+        return this.id;
+    }
+
+    public Date getCreate_date() {
+        return this.create_date;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getImage_URL() {
+        return this.image_URL;
+    }
+
+    public Date getLast_update() {
+        return this.last_update;
+    }
+
+    public String getTravel_price() {
+        return this.travel_price;
+    }
+
+    public String getVacation_title() {
+        return this.vacation_title;
+    }
+
+    public Set<Excursion> getExcursions() {
+        return this.excursions;
+    }
+
+    public Set<CartItem> getCartItems() {
+        return this.cartItems;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCreate_date(Date create_date) {
+        this.create_date = create_date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setImage_URL(String image_URL) {
+        this.image_URL = image_URL;
+    }
+
+    public void setLast_update(Date last_update) {
+        this.last_update = last_update;
+    }
+
+    public void setTravel_price(String travel_price) {
+        this.travel_price = travel_price;
+    }
+
+    public void setVacation_title(String vacation_title) {
+        this.vacation_title = vacation_title;
+    }
+
+    public void setExcursions(Set<Excursion> excursions) {
+        this.excursions = excursions;
+    }
+
+    public void setCartItems(Set<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
 }

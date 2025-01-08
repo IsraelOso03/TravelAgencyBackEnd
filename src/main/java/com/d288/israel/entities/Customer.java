@@ -1,17 +1,14 @@
 package com.d288.israel.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name="customers")
-@Getter
-@Setter
 
 public class Customer {
     @Id
@@ -49,7 +46,86 @@ public class Customer {
     @JoinColumn(name = "division_id")
     private Division division;
 
-
     public void add(Cart cart) {
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public String getPostal_code() {
+        return this.postal_code;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public Date getCreate_date() {
+        return this.create_date;
+    }
+
+    public Date getLast_update() {
+        return this.last_update;
+    }
+
+    public Set<Cart> getCarts() {
+        return this.carts;
+    }
+
+    public Division getDivision() {
+        return this.division;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPostal_code(String postal_code) {
+        this.postal_code = postal_code;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setCreate_date(Date create_date) {
+        this.create_date = create_date;
+    }
+
+    public void setLast_update(Date last_update) {
+        this.last_update = last_update;
+    }
+
+    public void setCarts(Set<Cart> carts) {
+        this.carts = carts;
+    }
+
+    public void setDivision(Division division) {
+        this.division = division;
     }
 }
