@@ -37,11 +37,14 @@ public class Excursion {
     @JoinColumn(name = "vacation_id")
     private Vacation vacation;
 
-    @ManyToMany
-    @JoinTable(name = "excursion_cartitem",
-            joinColumns = @JoinColumn(name = "excursion_id"),
-            inverseJoinColumns = @JoinColumn(name = "cart_item_id"))
+//    @ManyToMany
+//    @JoinTable(name = "excursion_cartitem",
+//            joinColumns = @JoinColumn(name = "excursion_id"),
+//            inverseJoinColumns = @JoinColumn(name = "cart_item_id"))
+//    private Set<CartItem> cartItems;
+    @ManyToMany(mappedBy = "excursions") // 'excursions' is the field in CartItem
     private Set<CartItem> cartItems;
+
 
     public Long getId() {
         return this.id;
