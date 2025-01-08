@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ public class Vacation {
     private Date last_update;
 
     @Column(name = "travel_fare_price")
-    private String travel_price;
+    private BigDecimal travel_price;
 
     @Column(name = "vacation_title")
     private String vacation_title;
@@ -61,7 +62,7 @@ public class Vacation {
         return this.last_update;
     }
 
-    public String getTravel_price() {
+    public BigDecimal getTravel_price() {
         return this.travel_price;
     }
 
@@ -97,7 +98,7 @@ public class Vacation {
         this.last_update = last_update;
     }
 
-    public void setTravel_price(String travel_price) {
+    public void setTravel_price(BigDecimal travel_price) {
         this.travel_price = travel_price;
     }
 
